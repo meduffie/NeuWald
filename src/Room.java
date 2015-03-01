@@ -1,6 +1,4 @@
 public class Room {
-    int l;
-    int w;
     String d;
     String Rn;
     boolean N;
@@ -12,10 +10,8 @@ public class Room {
     Room eR;
     Room sR;
     Room wR;
-    Room(String Rname, int length, int width, String des, boolean N1, Room n1, boolean E1, Room e1, boolean S1, Room s1, boolean W1, Room w1, int x, int y){
+    Room(String Rname, String des, boolean N1, Room n1, boolean E1, Room e1, boolean S1, Room s1, boolean W1, Room w1, int x, int y){
         Rn = Rname;
-        l = length;
-        w = width;
         d = des;
         N = N1;
         E = E1;

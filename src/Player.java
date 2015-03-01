@@ -50,4 +50,7 @@ public class Player {
     public Room getLoc(){
         return location;
     }
+    public void killPlayer(){
+        ali = false;
+    }
 }

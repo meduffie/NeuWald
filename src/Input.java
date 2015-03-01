@@ -47,5 +47,13 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
+        if(decision.equalsIgnoreCase("Help")){
+            System.out.println("Here are the commands available for you in NeuWald: ");
+            System.out.println("1.) N, E, S or W -- Go N, E, S or W\n2.) Look -- Get the room Description!"
+            + "\n3.) Exit -- Exit the game");
+        }
+        if(decision.equalsIgnoreCase("Exit")){
+            b.killPlayer();
+        }
     }
 }

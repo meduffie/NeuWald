@@ -13,8 +13,12 @@ public class Client {
         System.out.println("Welcome " + play.getName() + '!');
         System.out.print("How old would you like to be: ");
         play.setAge(scan.nextInt());
+        System.out.println("\nOkay, " + play.getName() + "! You're all set, welcome to the New World!");
+        System.out.println("Type \"Help\" for available commands!");
+        System.out.println("\n" + aa.Spawn.getDesc());
         while(play.getAlive()){ //This loop runs the whole game, see the cmd method
             inp.cmd(play.location, play);
         }
+        System.out.println("\nGoodbye! Thanks for playing New Worlds!");
     }
 }
