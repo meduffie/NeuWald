@@ -17,9 +17,29 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
+        if(decision.equalsIgnoreCase("E")){
+            if(a.canE()){
+                b.setLoc(a.eR); //Sets new Location
+                a = b.getLoc(); //Puts location into the loop memory
+                System.out.println(a.getDesc()); //Prints new Location
+            }
+            else{
+                System.out.println("Can't go this way!");
+            }
+        }
         if(decision.equalsIgnoreCase("S")){
             if(a.canS()){
                 b.setLoc(a.sR); //Sets new Location
+                a = b.getLoc(); //Puts location into the loop memory
+                System.out.println(a.getDesc()); //Prints new Location
+            }
+            else{
+                System.out.println("Can't go this way!");
+            }
+        }
+        if(decision.equalsIgnoreCase("W")){
+            if(a.canW()){
+                b.setLoc(a.wR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
                 System.out.println(a.getDesc()); //Prints new Location
             }

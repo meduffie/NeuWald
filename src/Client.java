@@ -2,8 +2,7 @@ import java.util.*;
 public class Client {
     public static void main(String args[]){
         World aa = new World();
-        aa.Spawn.setExitN(aa.Grass); //The only way I could get the first two rooms to behave
-        aa.Grass.setExitS(aa.Spawn);
+        aa.setRelations(); //Sets the relationships between room objects in class World
         Input inp = new Input();
         Scanner scan = new Scanner(System.in);
         String version = "0.0.1";

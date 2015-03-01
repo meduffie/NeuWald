@@ -37,8 +37,14 @@ public class Room {
     public boolean canN(){ //Is there a North exit?
         return N;
     }
+    public boolean canE(){ //Is there a North exit?
+        return E;
+    }
     public boolean canS(){ //Is there a South exit?
         return S;
+    }
+    public boolean canW(){ //Is there a South exit?
+        return W;
     }
     public Room getN(){ // Returns the North exit
         return nR;
@@ -51,5 +57,11 @@ public class Room {
     }
     public void setExitS(Room bc){ // Yeah, whatever...
         this.sR = bc;
+    }
+    public void setExitW(Room bc){ // Yeah, whatever...
+        this.wR = bc;
+    }
+    public void setExitE(Room bc){ // Yeah, whatever...
+        this.eR = bc;
     }
 }
