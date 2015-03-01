@@ -34,22 +34,22 @@ public class Room {
     public String getDesc(){
         return d;
     }
-    public boolean canN(){
+    public boolean canN(){ //Is there a North exit?
         return N;
     }
-    public boolean canS(){
+    public boolean canS(){ //Is there a South exit?
         return S;
     }
-    public Room getN(){
+    public Room getN(){ // Returns the North exit
         return nR;
     }
-    public Room getS(){
+    public Room getS(){ // Returns the South exit
         return sR;
     }
-    public void setExitN(Room b){
+    public void setExitN(Room b){ // Yeah, whatever...
         this.nR = b;
     }
-    public void setExitS(Room bc){
+    public void setExitS(Room bc){ // Yeah, whatever...
         this.sR = bc;
     }
 }
