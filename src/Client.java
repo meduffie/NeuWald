@@ -5,7 +5,6 @@ public class Client {
         aa.Spawn.setExitN(aa.Grass);
         aa.Grass.setExitS(aa.Spawn);
         Input inp = new Input();
-        Story stor = new Story(true); //True = Alive Var
         Scanner scan = new Scanner(System.in);
         String version = "0.0.1";
         System.out.println("Welcome to NeuWald " + version);
