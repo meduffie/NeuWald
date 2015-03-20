@@ -7,7 +7,7 @@ public class Input {
         if(decision.equalsIgnoreCase("look")){
             System.out.println(a.getDesc());
         }
-        if(decision.equalsIgnoreCase("N")){
+        else if(decision.equalsIgnoreCase("N")){
             if(a.canN()){
                 b.setLoc(a.nR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
@@ -17,7 +17,7 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
-        if(decision.equalsIgnoreCase("E")){
+        else if(decision.equalsIgnoreCase("E")){
             if(a.canE()){
                 b.setLoc(a.eR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
@@ -27,7 +27,7 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
-        if(decision.equalsIgnoreCase("S")){
+        else if(decision.equalsIgnoreCase("S")){
             if(a.canS()){
                 b.setLoc(a.sR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
@@ -37,7 +37,7 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
-        if(decision.equalsIgnoreCase("W")){
+        else if(decision.equalsIgnoreCase("W")){
             if(a.canW()){
                 b.setLoc(a.wR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
@@ -47,13 +47,31 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
-        if(decision.equalsIgnoreCase("Help")){
+        else if(decision.equalsIgnoreCase("Help")){
             System.out.println("Here are the commands available for you in NeuWald: ");
             System.out.println("1.) N, E, S or W -- Go N, E, S or W\n2.) Look -- Get the room Description!"
-            + "\n3.) Exit -- Exit the game");
+            + "\n3.) Quit -- Quit the game" + "\n4.) Exits -- Get a list of exits for this room");
         }
-        if(decision.equalsIgnoreCase("Exit")){
+        else if(decision.equalsIgnoreCase("Quit")){
             b.killPlayer();
         }
+	else if(decision.equalsIgnoreCase("Exits")){
+	    System.out.println("Here are your available exits:");
+	    if(a.canN()){
+		System.out.println("North: " + a.getN().getName());
+	    }
+            if(a.canE()){
+                System.out.println("East: " + a.getE().getName());
+            }
+            if(a.canS()){
+                System.out.println("South: " + a.getS().getName());
+            }
+            if(a.canW()){
+                System.out.println("West: " + a.getW().getName());
+            }
+	}
+	else{
+	    System.out.println("Incorrect input, type \"Help\" for commands");
+	}
     }
 }

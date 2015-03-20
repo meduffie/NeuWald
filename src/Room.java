@@ -25,10 +25,13 @@ public class Room {
         wR = w1;
     }
         Room(){
-            
+
         }
     public String getDesc(){
         return d;
+    }
+    public String getName(){
+	return Rn;
     }
     public boolean canN(){ //Is there a North exit?
         return N;
@@ -47,6 +50,12 @@ public class Room {
     }
     public Room getS(){ // Returns the South exit
         return sR;
+    }
+    public Room getE(){
+	return eR;
+    }
+    public Room getW(){
+	return wR;
     }
     public void setExitN(Room b){ // Yeah, whatever...
         this.nR = b;
