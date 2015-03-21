@@ -50,16 +50,16 @@ public class Input {
         else if(decision.equalsIgnoreCase("Help")){
             System.out.println("Here are the commands available for you in NeuWald: ");
             System.out.println("1.) N, E, S or W -- Go N, E, S or W\n2.) Look -- Get the room Description!"
-            + "\n3.) Quit -- Quit the game" + "\n4.) Exits -- Get a list of exits for this room");
+            + "\n3.) Exits -- Get a list of exits for this room" + "\n4.) Quit -- Quit the game");
         }
         else if(decision.equalsIgnoreCase("Quit")){
             b.killPlayer();
         }
-	else if(decision.equalsIgnoreCase("Exits")){
-	    System.out.println("Here are your available exits:");
-	    if(a.canN()){
-		System.out.println("North: " + a.getN().getName());
-	    }
+	    else if(decision.equalsIgnoreCase("Exits")){
+	        System.out.println("Here are your available exits:");
+	        if(a.canN()){
+    		System.out.println("North: " + a.getN().getName());
+	        }
             if(a.canE()){
                 System.out.println("East: " + a.getE().getName());
             }
@@ -69,9 +69,9 @@ public class Input {
             if(a.canW()){
                 System.out.println("West: " + a.getW().getName());
             }
-	}
-	else{
-	    System.out.println("Incorrect input, type \"Help\" for commands");
-	}
+	    }
+	    else{
+	        System.out.println("Incorrect input, type \"Help\" for commands");
+	    }
     }
 }
