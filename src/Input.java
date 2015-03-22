@@ -70,6 +70,14 @@ public class Input {
                 System.out.println("West: " + a.getW().getName());
             }
 	    }
+	    else if(decision.equalsIgnoreCase("Inv")){
+	        ArrayList<Item> inva = new ArrayList<Item>();
+	        inva = b.getInv();
+	        for(Item aa : inva){
+                int sn = 1;
+                System.out.println("Slot" + sn + ": " + aa.getName());
+            }
+	    }
 	    else{
 	        System.out.println("Incorrect input, type \"Help\" for commands");
 	    }

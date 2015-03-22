@@ -1,8 +1,10 @@
+import java.util.*;
 public class Player {
     String nam;
     int ag;
     double h;
     Room location;
+    ArrayList<Item> inv = new ArrayList<Item>();
     boolean ali;
     Player(){
         
@@ -49,6 +51,14 @@ public class Player {
     }
     public Room getLoc(){
         return location;
+    }
+    public void addInv(int slot, Item a){
+        if(slot < 6){
+            inv.add(slot, a);
+        }
+    }
+    public ArrayList<Item> getInv(){
+        return inv;
     }
     public void killPlayer(){
         ali = false;

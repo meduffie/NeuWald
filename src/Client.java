@@ -8,6 +8,8 @@ public class Client {
         String version = "0.0.1";
         System.out.println("Welcome to NeuWald " + version);
         Player play = new Player(null,1,100,aa.Spawn,true);
+        Item food = new Item("Chocolate Bar", "Mmm tasty chocolate");
+        play.addInv(0,food);
         System.out.print("Whats your name: ");
         play.setName(scan.next());
         System.out.println("Welcome " + play.getName() + '!');

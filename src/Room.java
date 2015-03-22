@@ -24,9 +24,9 @@ public class Room {
         sR = s1;
         wR = w1;
     }
-        Room(){
+    Room(){
 
-        }
+    }
     public String getDesc(){
         return d;
     }
