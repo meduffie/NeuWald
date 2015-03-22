@@ -55,11 +55,11 @@ public class Input {
         else if(decision.equalsIgnoreCase("Quit")){
             b.killPlayer();
         }
-	    else if(decision.equalsIgnoreCase("Exits")){
-	        System.out.println("Here are your available exits:");
-	        if(a.canN()){
-    		    System.out.println("North: " + a.getN().getName());
-	        }
+	else if(decision.equalsIgnoreCase("Exits")){
+	    System.out.println("Here are your available exits:");
+	    if(a.canN()){
+    		System.out.println("North: " + a.getN().getName());
+	    }
             if(a.canE()){
                 System.out.println("East: " + a.getE().getName());
             }
@@ -69,17 +69,17 @@ public class Input {
             if(a.canW()){
                 System.out.println("West: " + a.getW().getName());
             }
-	    }
-	    else if(decision.equalsIgnoreCase("Inv")){
-	        ArrayList<Item> inva = new ArrayList<Item>();
-	        inva = b.getInv();
-	        for(Item aa : inva){
+	}
+	else if(decision.equalsIgnoreCase("Inv")){
+	    ArrayList<Item> inva = new ArrayList<Item>();
+	    inva = b.getInv();
+	    for(Item aa : inva){
                 int sn = 1;
                 System.out.println("Slot" + sn + ": " + aa.getName());
             }
-	    }
-	    else{
-	        System.out.println("Incorrect input, type \"Help\" for commands");
-	    }
+	}
+	else{
+	    System.out.println("Incorrect input, type \"Help\" for commands");
+	}
     }
 }
