@@ -58,7 +58,7 @@ public class Input {
 	    else if(decision.equalsIgnoreCase("Exits")){
 	        System.out.println("Here are your available exits:");
 	        if(a.canN()){
-    		System.out.println("North: " + a.getN().getName());
+    		    System.out.println("North: " + a.getN().getName());
 	        }
             if(a.canE()){
                 System.out.println("East: " + a.getE().getName());
