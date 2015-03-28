@@ -10,7 +10,7 @@ public class Client {
         Player play = new Player(null,1,100,aa.Spawn,true);
         Item food = new Item("Chocolate Bar", "Mmm tasty chocolate");
         play.addInv(0,food);
-        System.out.print("Whats your name: ");
+        System.out.print("What's your name: ");
         play.setName(scan.next());
         System.out.println("Welcome " + play.getName() + '!');
         System.out.print("How old would you like to be: ");
