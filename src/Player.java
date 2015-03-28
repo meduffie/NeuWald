@@ -63,4 +63,27 @@ public class Player {
     public void killPlayer(){
         ali = false;
     }
+    public void Eat(Food f, int ss){
+        this.incHp(f.getHPA());
+        inv.remove(ss);
+    }
+    public int whereis(String x){
+        int inc = 0;
+        int slott = 0;
+        if(inv.size() != 0){
+            for(Item xx : inv){
+                if(xx.getName().equalsIgnoreCase(x)){
+                    slott = inc;
+                }
+                else{
+                    slott = -1;
+                }
+                inc++;
+                }
+            }
+        else{
+            slott = -1;
+        }
+        return slott;
+    }
 }

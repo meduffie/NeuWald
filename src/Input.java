@@ -3,7 +3,7 @@ public class Input {
     public void cmd(Room a, Player b){
         Scanner p2 = new Scanner(System.in);
         System.out.print("> ");
-        String decision = p2.next();
+        String decision = p2.nextLine();
         if(decision.equalsIgnoreCase("look")){
             System.out.println(a.getDesc());
         }
@@ -51,7 +51,7 @@ public class Input {
             System.out.println("Here are the commands available for you in NeuWald: ");
             System.out.println("1.) N, E, S or W -- Go N, E, S or W\n2.) Look -- Get the room Description!"
             + "\n3.) Exits -- Get a list of exits for this room" + "\n4.) Inv -- Get a printout of your Inventory!" +
-            "\n5.) Quit -- Quit the game");
+            "\n6.) Eat (Item name) -- Eat an item in your Inventory (Make sure you enter the item name!)" + "\n7.) Quit -- Quit the game");
         }
         else if(decision.equalsIgnoreCase("Quit")){
             b.killPlayer();
@@ -77,6 +77,24 @@ public class Input {
             for(Item aa : inva){
                 int sn = 1;
                 System.out.println("Slot " + sn + ": " + aa.getName());
+            }
+            if(inva.size() == 0){
+                System.out.println("You don't have anything in here!");
+            }
+        }
+        else if(decision.substring(0,3).equalsIgnoreCase("Eat") && decision.length() > 4){
+            String foode = decision.substring(4);
+            int s = b.whereis(foode);
+            if(s == -1){
+                System.out.println("You don't have that!");
+            }
+            if(s != -1){
+                Item tempI = b.inv.get(s);
+                if(tempI.amiFood(tempI)){
+                    Food tempF = (Food) tempI;
+                    b.Eat(tempF, s);
+                    System.out.println("Om nom nom! HP: " + b.getHp());
+                }
             }
         }
         else{
