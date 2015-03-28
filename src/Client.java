@@ -2,14 +2,13 @@ import java.util.*;
 public class Client {
     public static void main(String args[]){
         World aa = new World();
-        aa.setRelations(); //Sets the relationships between room objects in class World
+        aa.setWorld(); //This basically sets up everything in the world, relationships, items, etc
         Input inp = new Input();
         Scanner scan = new Scanner(System.in);
         String version = "0.0.1";
         System.out.println("Welcome to NeuWald " + version);
         Player play = new Player(null,1,100,aa.Spawn,true);
-        Item food = new Item("Chocolate Bar", "Mmm tasty chocolate");
-        play.addInv(0,food);
+        play.addInv(0,aa.chocBar);
         System.out.print("What's your name: ");
         play.setName(scan.next());
         System.out.println("Welcome " + play.getName() + '!');

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Room {
     String d;
     String Rn;
@@ -10,7 +11,8 @@ public class Room {
     Room eR;
     Room sR;
     Room wR;
-    Room(String Rname, String des, boolean N1, Room n1, boolean E1, Room e1, boolean S1, Room s1, boolean W1, Room w1, int x, int y){
+    ArrayList<Item> items = new ArrayList<>();
+    Room(String Rname, String des, boolean N1, Room n1, boolean E1, Room e1, boolean S1, Room s1, boolean W1, Room w1,int x, int y){
         Rn = Rname;
         d = des;
         N = N1;
@@ -31,18 +33,18 @@ public class Room {
         return d;
     }
     public String getName(){
-	return Rn;
+        return Rn;
     }
     public boolean canN(){ //Is there a North exit?
         return N;
     }
-    public boolean canE(){ //Is there a North exit?
+    public boolean canE(){ //Is there a East exit?
         return E;
     }
     public boolean canS(){ //Is there a South exit?
         return S;
     }
-    public boolean canW(){ //Is there a South exit?
+    public boolean canW(){ //Is there a West exit?
         return W;
     }
     public Room getN(){ // Returns the North exit
@@ -51,22 +53,22 @@ public class Room {
     public Room getS(){ // Returns the South exit
         return sR;
     }
-    public Room getE(){
-	return eR;
+    public Room getE(){ //Returns the East exit
+        return eR;
     }
-    public Room getW(){
-	return wR;
+    public Room getW(){ //Returns the West exit
+        return wR;
     }
-    public void setExitN(Room b){ // Yeah, whatever...
+    public void setExitN(Room b){ // Sets the North exit
         this.nR = b;
     }
-    public void setExitS(Room bc){ // Yeah, whatever...
+    public void setExitS(Room bc){ // Sets the South exit
         this.sR = bc;
     }
-    public void setExitW(Room bc){ // Yeah, whatever...
+    public void setExitW(Room bc){ // Sets the West exit
         this.wR = bc;
     }
-    public void setExitE(Room bc){ // Yeah, whatever...
+    public void setExitE(Room bc){ // Sets the East exit
         this.eR = bc;
     }
 }

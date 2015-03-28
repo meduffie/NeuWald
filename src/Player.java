@@ -4,7 +4,7 @@ public class Player {
     int ag;
     double h;
     Room location;
-    ArrayList<Item> inv = new ArrayList<Item>();
+    ArrayList<Item> inv = new ArrayList<>();
     boolean ali;
     Player(){
         

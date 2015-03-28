@@ -50,7 +50,8 @@ public class Input {
         else if(decision.equalsIgnoreCase("Help")){
             System.out.println("Here are the commands available for you in NeuWald: ");
             System.out.println("1.) N, E, S or W -- Go N, E, S or W\n2.) Look -- Get the room Description!"
-            + "\n3.) Exits -- Get a list of exits for this room" + "\n4.) Quit -- Quit the game");
+            + "\n3.) Exits -- Get a list of exits for this room" + "\n4.) Inv -- Get a printout of your Inventory!" +
+            "\n5.) Quit -- Quit the game");
         }
         else if(decision.equalsIgnoreCase("Quit")){
             b.killPlayer();
@@ -75,7 +76,7 @@ public class Input {
             inva = b.getInv();
             for(Item aa : inva){
                 int sn = 1;
-                System.out.println("Slot" + sn + ": " + aa.getName());
+                System.out.println("Slot " + sn + ": " + aa.getName());
             }
         }
         else{
