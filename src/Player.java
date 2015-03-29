@@ -72,13 +72,11 @@ public class Player {
     public int whereis(String x){
         int inc = 0;
         int slott = -1;
-        if(inv.size() != 0){
+        if(!inv.isEmpty()){
             for(Item xx : this.inv){
-                if(xx.getName().equalsIgnoreCase(x)){
+                String xa = xx.getName();
+                if(xa.equalsIgnoreCase(x)){
                     slott = inc;
-                }
-                else{
-                    slott = -1;
                 }
                 inc++;
                 }

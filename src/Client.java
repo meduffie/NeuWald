@@ -8,10 +8,7 @@ public class Client {
         String version = "0.0.1";
         System.out.println("Welcome to NeuWald " + version);
         Player play = new Player(null,1,100,aa.Spawn,null,true);
-        play.addInv(0,aa.frozDinner);
-        play.addInv(1,aa.sword);
-        play.addInv(2,aa.tofu);
-        play.addInv(3,aa.chocBar);
+        play.addInv(0,aa.chocBar);
         System.out.print("What's your name: ");
         play.setName(scan.next());
         System.out.println("Welcome " + play.getName() + '!');

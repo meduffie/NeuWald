@@ -4,7 +4,6 @@ public class Input {
         Scanner p2 = new Scanner(System.in);
         System.out.print("> ");
         String decision = p2.nextLine();
-        boolean enoughForSubstring = false;
         if(decision.equalsIgnoreCase("look")){
             System.out.println(a.getDesc());
         }
