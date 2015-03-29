@@ -74,9 +74,38 @@ public class Room {
     public void addI(Item a){
         items.add(a);
     }
+    public void remI(int a){
+        items.remove(a);
+    }
+    public Item getI(int a){
+        Item r = items.get(a);
+        return r;
+    }
     public void printI(){
-        for(Item a : items){
-            System.out.println(a.getName());
+        if(!items.isEmpty()){
+            for(Item a : items){
+                System.out.println(a.getName());
+            }
         }
+        else{
+            System.out.println("There seem to be no Items here!");
+        }
+    }
+    public int whereis(String z){
+        int incc = 0;
+        int slot = -1;
+        if(!items.isEmpty()){
+            for(Item xb : this.items){
+                String xa = xb.getName();
+                if(xa.equalsIgnoreCase(z)){
+                    slot = incc;
+                }
+                incc++;
+                }
+            }
+        else{
+            slot = -1;
+        }
+        return slot;
     }
 }

@@ -59,6 +59,15 @@ public class Player {
             inv.add(slot, a);
         }
     }
+    public void addInv(Item a){
+        if(inv.size() < 6){
+            inv.add(a);
+            System.out.println("Added " + a.getName() + " to Inv!");
+        }
+        else if(inv.size() > 6){
+            System.out.println("Oops, looks like your Inv is full!");
+        }
+    }
     public ArrayList<Item> getInv(){
         return inv;
     }

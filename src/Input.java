@@ -51,12 +51,13 @@ public class Input {
             System.out.println("Here are the commands available for you in NeuWald: ");
             System.out.println("N, E, S or W -- Go N, E, S or W\nLook -- Get the room Description!"
             + "\nExits -- Get a list of exits for this room" + "\nInv -- Get a printout of your Inventory!" +
-            "\nEat (Item name) -- Eat an item in your Inventory (Make sure you enter the item name!)" + 
+            "\nEat <Item> -- Eat an item in your Inventory (Make sure you enter the item name!)" + 
             "\nStats -- Lists your current player stats" + "\nQuit -- Quit the game\n(More commands in \"Help 2\")");
         }
         else if(decision.equalsIgnoreCase("Help 2")){
             System.out.println("Help Page 2: ");
             System.out.println("Room items -- Prints out all the Items in your current room");
+            System.out.println("Pickup <Item> -- Picks up specified Item");
         }
         else if(decision.equalsIgnoreCase("Quit")){
             b.killPlayer();
@@ -115,8 +116,19 @@ public class Input {
             if(sl == -1){
                 System.out.println("You don't have that!");
             }
-            if(sl != -1){
+            else if(sl != -1){
                 b.equip(sl);
+            }
+        }
+        else if(decision.length() > 7 && decision.substring(0,6).equalsIgnoreCase("Pickup")){
+            String pik = decision.substring(7);
+            int pikl = a.whereis(pik);
+            if(pikl == -1){
+                System.out.println("That doesn't exist here");
+            }
+            else if(pikl != -1){
+                b.addInv(a.getI(pikl));
+                a.remI(pikl);
             }
         }
         else{
