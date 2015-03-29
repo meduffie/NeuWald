@@ -5,15 +5,17 @@ public class Player {
     double h;
     Room location;
     ArrayList<Item> inv = new ArrayList<>();
+    Weapon wAct;
     boolean ali;
     Player(){
         
     }
-    Player(String name, int age, double hp, Room loc, boolean alive){
+    Player(String name, int age, double hp, Room loc, Weapon equip, boolean alive){
         nam = name;
         ag = age;
         h = hp;
         location = loc;
+        wAct = equip;
         ali = alive;
     }
     public String getName(){
@@ -69,9 +71,9 @@ public class Player {
     }
     public int whereis(String x){
         int inc = 0;
-        int slott = 0;
+        int slott = -1;
         if(inv.size() != 0){
-            for(Item xx : inv){
+            for(Item xx : this.inv){
                 if(xx.getName().equalsIgnoreCase(x)){
                     slott = inc;
                 }
@@ -85,5 +87,28 @@ public class Player {
             slott = -1;
         }
         return slott;
+    }
+    public void printStats(){
+        System.out.println("Stats for player: " + this.getName());
+        System.out.println("Age: " + this.getAge());
+        System.out.println("HP: " + this.getHp());
+        System.out.println("Equipped Weaponry: ");
+        boolean hasW = false;
+        if(wAct != null){
+            System.out.println(wAct.getName());
+            hasW = true;
+        }
+        else{
+            System.out.println("None");
+        }
+    }
+    public void equip(int slot){
+        if(inv.get(slot) instanceof Weapon){
+            Weapon weat = (Weapon) inv.get(slot);
+            wAct = weat;
+        }
+        else{
+            System.out.println("Sorry, you can't equip that!");
+        }
     }
 }

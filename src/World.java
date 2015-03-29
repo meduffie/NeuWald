@@ -1,8 +1,14 @@
 public class World {
+
+    Food chocBar = new Food("Chocolate", "Mmm this is a tasty chocolate bar!", 10);
+    Food tofu = new Food("Tofu", "Wow! A warm block of TSP!", 20);
+    Food bread = new Food("Bread", "Cool! A piece of whole grain bread!", 10);
+    Food frozDinner = new Food("Frozen Dinner", "Yum! A Vegan mexican dish!", 25);
+    
+    Weapon sword = new Weapon("Sword", "Oooh a shiny Sword!", 10, 100);
+    
     //False & Null = No exit in that direction, see constructor
     //True & Null = Waiting for relationship (Method setRelations), called in Client
-    Food chocBar = new Food("Chocolate Bar", "Mmm this is a tasty chocolate bar!", 10);
-    
     Room Spawn = new Room("Spawn", "This is a dark room with one exit.",
     true, null, false, null, false, null, false, null, 1,0);
     

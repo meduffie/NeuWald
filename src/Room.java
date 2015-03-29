@@ -60,15 +60,23 @@ public class Room {
         return wR;
     }
     public void setExitN(Room b){ // Sets the North exit
-        this.nR = b;
+        nR = b;
     }
     public void setExitS(Room bc){ // Sets the South exit
-        this.sR = bc;
+        sR = bc;
     }
     public void setExitW(Room bc){ // Sets the West exit
-        this.wR = bc;
+        wR = bc;
     }
     public void setExitE(Room bc){ // Sets the East exit
-        this.eR = bc;
+        eR = bc;
+    }
+    public void addI(Item a){
+        items.add(a);
+    }
+    public void printI(){
+        for(Item a : items){
+            System.out.println(a.getName());
+        }
     }
 }
