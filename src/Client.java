@@ -6,7 +6,8 @@ public class Client {
         Input inp = new Input();
         Scanner scan = new Scanner(System.in);
         String version = "0.0.1";
-        System.out.println("Welcome to NeuWald " + version);
+        String icon = "#############\n#           #\n#  NeuWald  #\n#           #\n#############";        
+        System.out.println("\n" + icon + "\nVersion: " + version + "\n");
         Player play = new Player(null,1,100,aa.Spawn,null,true);
         play.addInv(0,aa.chocBar);
         System.out.print("What's your name: ");
