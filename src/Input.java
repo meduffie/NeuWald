@@ -58,6 +58,8 @@ public class Input {
             System.out.println("Help Page 2: ");
             System.out.println("Room items -- Prints out all the Items in your current room");
             System.out.println("Pickup <Item> -- Picks up specified Item");
+            System.out.println("Equip <Weapon in Inv> -- Equips weapon, places it in Equipped slot, out of Inv");
+            System.out.println("Unequip <Weapon that IS equipped> -- Unqeuips weapon, places it Inv");
         }
         else if(decision.equalsIgnoreCase("Quit")){
             b.killPlayer();
@@ -78,14 +80,14 @@ public class Input {
             }
         }
         else if(decision.equalsIgnoreCase("Inv")){
-            ArrayList<Item> inva = new ArrayList<Item>();
+            ArrayList<Item> inva = new ArrayList<>();
             inva = b.getInv();
             int sn = 1;
             for(Item aa : inva){
                 System.out.println("Slot " + sn + ": " + aa.getName());
                 sn++;
             }
-            if(inva.size() == 0){
+            if(inva.isEmpty()){
                 System.out.println("You don't have anything in here!");
             }
         }
@@ -118,6 +120,26 @@ public class Input {
             }
             else if(sl != -1){
                 b.equip(sl);
+            }
+        }
+        else if(decision.length() > 8 && decision.substring(0,7).equalsIgnoreCase("Unequip")){
+            String wuq = decision.substring(8);
+            if(b.wAct != null && b.wAct.getName().equalsIgnoreCase(wuq)){
+                if(b.inv.size() < 6){
+                    Item putback = b.wAct;
+                    b.wAct = null;
+                    b.addInv(putback);
+                    System.out.println("Unequipped " + putback.getName());
+                }
+                else{
+                    System.out.println("Can't unequip! You're inv is full!");
+                }
+            }
+            else if(b.wAct != null && !b.wAct.getName().equalsIgnoreCase(wuq)){
+                System.out.println("That weapon isn't equipped!");
+            }
+            else{
+                System.out.println("You don't have anything equipped!");
             }
         }
         else if(decision.length() > 7 && decision.substring(0,6).equalsIgnoreCase("Pickup")){

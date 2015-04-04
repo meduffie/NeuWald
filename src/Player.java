@@ -113,6 +113,7 @@ public class Player {
         if(inv.get(slot) instanceof Weapon){
             Weapon weat = (Weapon) inv.get(slot);
             wAct = weat;
+            inv.remove(slot);
             System.out.println("Equipped: " + weat.getName());
         }
         else{
