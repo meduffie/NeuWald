@@ -12,6 +12,7 @@ public class Room {
     Room sR;
     Room wR;
     ArrayList<Item> items = new ArrayList<>();
+    ArrayList<Monster> mobs = new ArrayList<>();
     Room(String Rname, String des, boolean N1, Room n1, boolean E1, Room e1, boolean S1, Room s1, boolean W1, Room w1,int x, int y){
         Rn = Rname;
         d = des;
@@ -80,6 +81,11 @@ public class Room {
     public Item getI(int a){
         Item r = items.get(a);
         return r;
+    }
+    public void printMobs(){
+        for(Monster x : mobs){
+            System.out.println(x.getName());
+        }
     }
     public void printI(){
         if(!items.isEmpty()){

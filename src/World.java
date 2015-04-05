@@ -13,7 +13,7 @@ public class World {
     true, null, false, null, false, null, false, null, 0,0);
     
     String gd = "Welcome to the New World, this is a grassy plain. The sun shines brightly in the summer sky, and you feel a great warmth cascade over you.";
-    Room Grass = new Room("Grass", gd , true, null, false, null, true, null, true, null, 0,1); 
+    Room Grass = new Room("Grass", gd , true, null, true, null, true, null, true, null, 0,1); 
     
     Room Forrest = new Room("Forrest", "The smell of fresh Oak fills the air, this seems to be a forrest of some sort",
     false, null, true, null, false, null, false, null, 1,1);
@@ -21,14 +21,20 @@ public class World {
     Room Prarie = new Room("Prarie", "The wheat leaves rumble in the air, and there seems to be nothing but prarie grass for miles",
     false, null, false, null, true, null, false, null, 0,2);
     
+    Room Arena = new Room("Arena", "There are monsters", false, null, false, null, false, null, true, null, -1,1);
+    
+    Monster kingworm = new Monster("King Worm", 2, 50, null, null, true, false);
     public void setWorld(){
         Spawn.setExitN(Grass);
         Grass.setExitS(Spawn);
         Grass.setExitW(Forrest);
         Grass.setExitN(Prarie);
+        Grass.setExitE(Arena);
         Prarie.setExitS(Grass);
         Forrest.setExitE(Grass);
         Forrest.addI(bread);
         Forrest.addI(wSword);
+        Arena.setExitW(Grass);
+        Arena.mobs.add(0,kingworm);
     }
 }

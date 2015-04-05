@@ -6,8 +6,12 @@ public class Input {
         String decision = p2.nextLine();
         if(decision.equalsIgnoreCase("look")){
             System.out.println(a.getDesc());
+            if(!a.mobs.isEmpty()){
+                System.out.println("Mobs: ");
+                a.printMobs();
+            }
         }
-        else if(decision.equalsIgnoreCase("N")){
+        else if(decision.equalsIgnoreCase("N") || decision.equalsIgnoreCase("North")){
             if(a.canN()){
                 b.setLoc(a.nR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
@@ -17,7 +21,7 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
-        else if(decision.equalsIgnoreCase("E")){
+        else if(decision.equalsIgnoreCase("E") || decision.equalsIgnoreCase("East")){
             if(a.canE()){
                 b.setLoc(a.eR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
@@ -27,7 +31,7 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
-        else if(decision.equalsIgnoreCase("S")){
+        else if(decision.equalsIgnoreCase("S") || decision.equalsIgnoreCase("South")){
             if(a.canS()){
                 b.setLoc(a.sR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
@@ -37,7 +41,7 @@ public class Input {
                 System.out.println("Can't go this way!");
             }
         }
-        else if(decision.equalsIgnoreCase("W")){
+        else if(decision.equalsIgnoreCase("W") || decision.equalsIgnoreCase("West")){
             if(a.canW()){
                 b.setLoc(a.wR); //Sets new Location
                 a = b.getLoc(); //Puts location into the loop memory
@@ -152,6 +156,9 @@ public class Input {
                 b.addInv(a.getI(pikl));
                 a.remI(pikl);
             }
+        }
+        else if(decision.length() > 6 && decision.substring(0,7).equalsIgnoreCase("Fight")){
+            String mobb = decision.substring(6);
         }
         else{
             System.out.println("Incorrect input, type \"Help\" for commands");
