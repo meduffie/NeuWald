@@ -21,7 +21,7 @@ public class World {
     Room Prarie = new Room("Prarie", "The wheat leaves rumble in the air, and there seems to be nothing but prarie grass for miles",
     false, null, false, null, true, null, false, null, 0,2);
     
-    Room Arena = new Room("Arena", "There are monsters", false, null, false, null, false, null, true, null, -1,1);
+    Room Arena = new Room("Arena", "This is the lair of the MIGHTY KING WORM!", false, null, false, null, false, null, true, null, -1,1);
     
     Monster kingworm = new Monster("King Worm", 2, 50, null, null, true, false,125);
     public void setWorld(){
