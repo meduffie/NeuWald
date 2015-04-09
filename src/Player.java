@@ -105,8 +105,8 @@ public class Player {
         System.out.println("Stats for player: " + this.getName());
         System.out.println("Age: " + this.getAge());
         System.out.println("HP: " + this.getHp());
-        System.out.println("Equipped Weaponry: ");
         System.out.println("Fights won: " + this.won + " Fights lost: " + this.lost);
+        System.out.println("Equipped Weaponry: ");
         boolean hasW = false;
         if(wAct != null){
             System.out.println(wAct.getName());

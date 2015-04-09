@@ -5,7 +5,7 @@ public class World {
     Food bread = new Food("Bread", "Cool! A piece of whole grain bread!", 10);
     Food frozDinner = new Food("Frozen Dinner", "Yum! A Vegan mexican dish!", 25);
     
-    Weapon wSword = new Weapon("Wooden Sword", "A sturdy Wooden Sword!", 10, 25);
+    Weapon wSword = new Weapon("Wooden Sword", "A sturdy Wooden Sword!", 20, 25);
     
     //False & Null = No exit in that direction, see constructor
     //True & Null = Waiting for relationship (Method setRelations), called in Client
