@@ -114,4 +114,21 @@ public class Room {
         }
         return slot;
     }
+    public int whereisMob(String z){
+        int incc = 0;
+        int slot = -1;
+        if(!mobs.isEmpty()){
+            for(Monster xb : this.mobs){
+                String xa = xb.getName();
+                if(xa.equalsIgnoreCase(z)){
+                    slot = incc;
+                }
+                incc++;
+                }
+            }
+        else{
+            slot = -1;
+        }
+        return slot;
+    }
 }

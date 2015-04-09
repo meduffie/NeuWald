@@ -57,7 +57,8 @@ public class Input {
             System.out.println("N, E, S or W -- Go N, E, S or W\nLook -- Get the room Description!"
             + "\nExits -- Get a list of exits for this room" + "\nInv -- Get a printout of your Inventory!" +
             "\nEat <Item> -- Eat an item in your Inventory (Make sure you enter the item name!)" + 
-            "\nStats -- Lists your current player stats" + "\nQuit -- Quit the game\n(More commands in \"Help 2\")");
+            "\nStats -- Lists your current player stats" + "\nFight <monster> -- Starts fight with specified monster" + 
+            "\nQuit -- Quit the game\n(More commands in \"Help 2\")");
         }
         else if(decision.equalsIgnoreCase("Help 2")){
             System.out.println("Help Page 2: ");
@@ -158,8 +159,23 @@ public class Input {
                 a.remI(pikl);
             }
         }
-        else if(decision.length() > 6 && decision.substring(0,7).equalsIgnoreCase("Fight")){
+        else if(decision.length() > 6 && decision.substring(0,5).equalsIgnoreCase("Fight")){
             String mobb = decision.substring(6);
+            int mobpos = a.whereisMob(mobb);
+            if(mobpos == -1){
+                System.out.println("Either that monster isn't in this room, or you misspelled something");
+            }
+            else if(mobpos != -1){
+                boolean x = b.fight(a.mobs.get(mobpos));
+                if(x){
+                    b.won++;
+                    a.mobs.remove(mobpos);
+                }
+                else{
+                    b.lost++;
+                }
+                System.out.println(a.getDesc());
+            }
         }
         else{
             System.out.println("Incorrect input, type \"Help\" for commands");

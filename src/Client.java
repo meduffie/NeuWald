@@ -8,7 +8,7 @@ public class Client {
         String version = "0.0.1";
         String icon = "#############\n#           #\n#  NeuWald  #\n#           #\n#############";        
         System.out.println("\n" + icon + "\nVersion: " + version + "\n");
-        Player play = new Player(null,1,100,aa.Spawn,null,true);
+        Player play = new Player(null,1,100,aa.Spawn,null,true,0,1);
         play.addInv(0,aa.chocBar);
         System.out.print("What's your name: ");
         play.setName(scan.next());

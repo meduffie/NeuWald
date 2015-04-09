@@ -7,16 +7,22 @@ public class Player {
     ArrayList<Item> inv = new ArrayList<>();
     Weapon wAct;
     boolean ali;
+    int xpp;
+    int lvll;
+    int won;
+    int lost;
     Player(){
         
     }
-    Player(String name, int age, double hp, Room loc, Weapon equip, boolean alive){
+    Player(String name, int age, double hp, Room loc, Weapon equip, boolean alive, int xp, int lvl){
         nam = name;
         ag = age;
         h = hp;
         location = loc;
         wAct = equip;
         ali = alive;
+        xpp = xp;
+        lvll = lvl;
     }
     public String getName(){
         return nam;
@@ -100,6 +106,7 @@ public class Player {
         System.out.println("Age: " + this.getAge());
         System.out.println("HP: " + this.getHp());
         System.out.println("Equipped Weaponry: ");
+        System.out.println("Fights won: " + this.won + " Fights lost: " + this.lost);
         boolean hasW = false;
         if(wAct != null){
             System.out.println(wAct.getName());
@@ -120,7 +127,61 @@ public class Player {
             System.out.println("Sorry, you can't equip that!");
         }
     }
-    //public void fight(Player t){
-    //    while(this.)
-    //}
+    public void addXp(int add){
+        xpp += add;
+    }
+    public boolean fight(Monster t){
+        boolean fighting = true;
+        boolean wonf = false;
+        System.out.println("You have challenged the almighty glory of " + t.getName() + " prepare to die!");
+        while(this.ali && fighting && t.ali){
+            Random ran = new Random();
+            int atk = ran.nextInt(t.getAtkMa() - t.getAtkMi() +1) + t.getAtkMi();
+            this.decHp(atk);
+            System.out.println("Got hit! HP: " + this.getHp());
+            Scanner fp = new Scanner(System.in);
+            System.out.println("Hit or run: ");
+            System.out.print("> ");
+            String dec = fp.next();
+            if(dec.length() > 3){
+                dec = dec.substring(0,3);
+            }
+            if(dec.equalsIgnoreCase("hit")){
+                int playAtk;
+                if(this.wAct != null){
+                    playAtk = this.wAct.getHit();
+                }
+                else{
+                    playAtk = this.lvll *10;
+                }
+                t.decHp(playAtk);
+                System.out.println(t.getName() + " hp: " + t.getHp());
+            }
+            else if(dec.equalsIgnoreCase("run")){
+                System.out.println("Fleeing...");
+                fighting = false;
+            }
+            else{
+                System.out.println("Incorrect input, we're going to let you run...");
+                fighting = false;
+            }
+            if(t.getHp() < 1){
+                t.ali = false;
+            }
+            if(!t.ali){
+                System.out.println("You have slain " + t.getName() + "!");
+                int xpgain = (int)t.getStrength() / 10;
+                this.addXp(xpgain);
+                wonf = true;
+            }
+            if(this.getHp() < 1){
+                this.ali = false;
+            }
+            if(!this.ali){
+                System.out.println("You have been slain.. Respawing with 10 hp");
+                this.incHp(10);
+            }
+        }
+        return wonf;
+    }
 }
