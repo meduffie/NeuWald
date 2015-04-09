@@ -1,5 +1,6 @@
 import java.util.*;
 public class Input {
+    boolean playing = true;
     public void cmd(Room a, Player b){
         Scanner p2 = new Scanner(System.in);
         System.out.print("> ");
@@ -66,7 +67,7 @@ public class Input {
             System.out.println("Unequip <Weapon that IS equipped> -- Unqeuips weapon, places it Inv");
         }
         else if(decision.equalsIgnoreCase("Quit")){
-            b.killPlayer();
+            playing = false;
         }
         else if(decision.equalsIgnoreCase("Exits")){
             System.out.println("Here are your available exits:");

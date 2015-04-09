@@ -120,4 +120,7 @@ public class Player {
             System.out.println("Sorry, you can't equip that!");
         }
     }
+    //public void fight(Player t){
+    //    while(this.)
+    //}
 }

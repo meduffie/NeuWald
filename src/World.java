@@ -23,7 +23,7 @@ public class World {
     
     Room Arena = new Room("Arena", "There are monsters", false, null, false, null, false, null, true, null, -1,1);
     
-    Monster kingworm = new Monster("King Worm", 2, 50, null, null, true, false);
+    Monster kingworm = new Monster("King Worm", 2, 50, null, null, true, false,50);
     public void setWorld(){
         Spawn.setExitN(Grass);
         Grass.setExitS(Spawn);
