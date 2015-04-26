@@ -9,9 +9,9 @@ public class Monster extends Player{
         public double getStrength(){
             return str;
         }
-        public int getAtkMa(){
-            double ma = str/10;
-            if(ma < 1){
+        public int getAtkMa(){ //Get attack maximum
+            double ma = str/10; //Max attack points = strength / 10
+            if(ma < 1){ //Makes sure maa won't return as 0
                 double dif = 1-ma;
                 ma += dif;
             }

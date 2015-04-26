@@ -15,7 +15,7 @@ public class Client {
         System.out.println("Welcome " + play.getName() + '!');
         System.out.print("How old would you like to be: ");
         play.setAge(scan.nextInt());
-        System.out.println("\nOkay, " + play.getName() + "! You're all set, welcome to the New World!");
+        System.out.println("\nOkay, " + play.getName() + "! You're all set, welcome to NeuWald!");
         System.out.println("Type \"Help\" for available commands! (New players should do this!)");
         System.out.println("\n" + aa.Spawn.getDesc());
         while(inp.playing){ //This loop runs the whole game, see the cmd method

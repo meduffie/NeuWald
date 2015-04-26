@@ -94,10 +94,10 @@ public class Room {
             }
         }
         else{
-            System.out.println("There seem to be no Items here!");
+            System.out.println("There seems to be no Items here!");
         }
     }
-    public int whereis(String z){
+    public int whereis(String z){ //Returns where object is
         int incc = 0;
         int slot = -1;
         if(!items.isEmpty()){
@@ -114,7 +114,7 @@ public class Room {
         }
         return slot;
     }
-    public int whereisMob(String z){
+    public int whereisMob(String z){ //Returns the index where the mob object is
         int incc = 0;
         int slot = -1;
         if(!mobs.isEmpty()){
